@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Inventory report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nreport.css') }}" />
+</head>
+  <body >
+    <main>
+      <h1  class="clearfix"><small><span>DATE</span><br />{{ today }}</small> Inventory report <small><span></span><br /></small></h1>
+      <table class="data">
+        <thead>
+        <tr>
+            
+            {% for r in data.header %}
+                <th id="header1">{{ r  }}</th>
+            {% endfor %}
+            
+        </tr>
+        </thead>
+        <tbody>
+        
+            {% for r in data.rec %}
+                <tr>
+                {% for l in r %}
+                    
+                    <td > {{ l }}</td>
+                            
+                        
+                    
+
+                {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    </main>
+    <script src="{{ url_for('static', filename='js/workorder.js') }}"></script>
+
+  </body>
+</html>
